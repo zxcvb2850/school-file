@@ -3,7 +3,7 @@ import {Route, Link} from "react-router-dom";
 import MyItem from "./MyItem";
 
 const Topics = ({match}) => (
-    <div>
+    <div style={{position: 'fixed', top: 0, left: 0, bottom: 0, right: 0, backgroundColor: "#000"}}>
         <h2>Topics</h2>
         <ul>
             <li>
@@ -16,7 +16,7 @@ const Topics = ({match}) => (
                 <Link to={`${match.url}/03`}>Props v. State</Link>
             </li>
         </ul>
-        
+
         <Route path={`${match.url}/:id`} component={MyItem}/>
         <Route
             exact

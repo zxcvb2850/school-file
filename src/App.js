@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import Router from "./router/index";
 
+import Router from "./router/"
+
+/*import TabBar from "./component/TabBar";*/
 
 class App extends Component {
     render() {

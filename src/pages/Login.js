@@ -23,7 +23,7 @@ export default class Login extends Component {
     render() {
         return (
             <div>
-                <p onClick={this.onChange.bind()}>Login</p>
+                <p onClick={this.onChange.bind()}>我是发现</p>
             </div>
         )
     }

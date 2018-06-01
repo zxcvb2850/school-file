@@ -1,19 +1,12 @@
 /*
 *  react 路由
 * */
-
 import React from "react";
 import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import PropTypes from 'prop-types';
-import {withStyles} from '@material-ui/core/styles';
-
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import PhoneIcon from '@material-ui/icons/Phone';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
 import Typography from '@material-ui/core/Typography';
+import {Restore, Favorite, LocationOn} from '@material-ui/icons';
+import "./tab.less";
 
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
@@ -32,40 +25,45 @@ TabContainer.propTypes = {
     dir: PropTypes.string.isRequired,
 };
 
-const styles = theme => ({
-    root: {
-        backgroundColor: theme.palette.background.paper,
-        width: 500,
-    },
-});
-
 class BasicConfig extends React.Component {
     state = {
-        value: 0,
+        value: "HomeIndex",
+        redirect: false
     };
-
-    handleChange = (event, value) => {
+    // 这一步是重点
+    static contextTypes = {
+        router: PropTypes.object.isRequired
+    };
+    
+    handleChange = value => () => {
+        console.log(value);
         this.setState({value});
     };
-
+    
     render() {
-
         return (
             <Router>
                 <div>
-                    <AppBar position="static" color="default">
-                        <Tabs
-                            value={this.state.value}
-                            onChange={this.handleChange}
-                            scrollButtons="on"
-                            indicatorColor="primary"
-                            textColor="primary"
+                    <div className="tab-wrapper">
+                        <Link
+                            to="/"
+                            className="link"
+                            style={{color: this.state.value === "HomeIndex" ? "F00" : "FF0"}}
+                            onClick={this.handleChange("HomeIndex")}
                         >
-                            <Tab label={<Link to="/">首页</Link>} icon={<PhoneIcon />} />
-                            <Tab label={<Link to="/login">发现</Link>} icon={<FavoriteIcon />} />
-                            <Tab label={<Link to="/my">我的</Link>} icon={<PersonPinIcon />} />
-                        </Tabs>
-                    </AppBar>
+                            <Restore/>
+                            <p>首页</p>
+                        </Link>
+                        <Link to="/login" className="link" onClick={this.handleChange("FindIndex")}>
+                            <Favorite/>
+                            <p>发现</p>
+                        </Link>
+                        <Link to="/my" className="link" onClick={this.handleChange("MineIndex")}>
+                            <LocationOn/>
+                            <p>我的</p>
+                        </Link>
+                    </div>
+                    
                     <Switch>
                         <Route exact path='/' component={Home}/>
                         {/* both /roster and /roster/:number begin with /roster */}
@@ -76,11 +74,6 @@ class BasicConfig extends React.Component {
             </Router>
         )
     }
-};
+}
 
-BasicConfig.propTypes = {
-    classes: PropTypes.object.isRequired,
-    theme: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles, {withTheme: true})(BasicConfig);
+export default BasicConfig;

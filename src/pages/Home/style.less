@@ -1,0 +1,67 @@
+/*
+* Home的样式
+* */
+@import "../../common/styles/index";
+
+.home-wrapper {
+  .tab-height-wrapper;
+  .home-header {
+    position: fixed;
+    width: 100%;
+    height: @HomeHeaderHeight;
+    background-color: @colorMain;
+    color: @colorWhite;
+    z-index: 12;
+    .home-location {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: @HomeHeaderHeight;
+    }
+    .home-screen {
+      position: absolute;
+      right: 10px;
+      line-height: @HomeHeaderHeight;
+    }
+    span {
+      display: inline-block;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .screen-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 12;
+    transition: all 5s;
+    .screen {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 50%;
+      background-color: @colorWhite;
+    }
+  }
+
+  .my-drawer {
+    position: relative;
+    top: @HomeHeaderHeight;
+    overflow: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  .my-drawer .am-drawer-sidebar {
+    background-color: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .my-drawer .am-drawer-sidebar .am-list {
+    width: 300px;
+    padding: 0;
+  }
+}

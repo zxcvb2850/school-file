@@ -124,6 +124,9 @@ module.exports = {
                 use: [
                     {
                         options: {
+                            plugins: [
+                                ['import', [{libraryName: "antd-mobile", style: 'css'}]],
+                            ],
                             formatter: eslintFormatter,
                             eslintPath: require.resolve('eslint'),
 

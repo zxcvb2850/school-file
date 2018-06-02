@@ -8,18 +8,27 @@ export default class IconTabs extends React.Component {
             <div className="tab-wrapper">
                 <NavLink
                     to="/home"
-                    className="link"
+                    className="tab-item"
                 >
-                    <p><Icon type="arrows-alt"/>首页</p>
+                    <p><span className="icon">&#xe610;</span>首页</p>
+                </NavLink>
+                <NavLink
+                    to="/message"
+                    className="tab-item"
+                >
+                    <p><span className="icon">&#xe604;</span>消息</p>
                 </NavLink>
                 <NavLink
                     to="/find"
-                    className="link"
+                    className="tab-item"
                 >
-                    <p>发现</p>
+                    <p><span className="icon">&#xe603;</span>发现</p>
                 </NavLink>
-                <NavLink to="/my" className="link">
-                    <p>我的</p>
+                <NavLink to="/mine" className="tab-item">
+                    <p>
+                        <span className="icon">&#xe600;</span>
+                        <span className="tab-item-text">我的</span>
+                    </p>
                 </NavLink>
             </div>
         );

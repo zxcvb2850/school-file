@@ -6,7 +6,6 @@ import App from './App';
 import "./common/styles/index.less"
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from 'react-router-dom'
-import "./common/styles/index.less"
 
 
 ReactDOM.render((

@@ -1,26 +1,37 @@
+@import "../common/styles/index";
+
 .tab-wrapper {
-  height: 60px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: @tabBarHeight;
+  display: flex;
+  background-color: #FFF;
+  z-index: 10;
+}
+
+.tab-item {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.link {
-  flex: 1;
   height: 100%;
   text-align: center;
-  color: #000;
+  color: @colorDim;
   text-decoration: none;
   &.active {
-    border-bottom-width: 1px;
-    border-bottom-color: #F00;
+    border-top-width: 1px;
+    border-top-color: @colorMain;
     border-style: solid;
-    .link-btn {
-      color: #F00;
-    }
+    color: @colorMain;
   }
-  .link-btn {
-    width: 100%;
-    height: 100%;
+  .icon {
+    display: block;
+    padding-bottom: 4px;
+    font-size: @fontSizeIcon;
+  }
+  .tab-item-text {
+    font-size: @fontSizeMin;
   }
 }

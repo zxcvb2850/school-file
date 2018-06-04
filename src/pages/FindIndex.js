@@ -29,7 +29,6 @@ export default class FindIndex extends Component {
     }
 };*/
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import "./css.less";
 export default class TodoList extends Component {
     constructor(props) {
@@ -61,13 +60,13 @@ export default class TodoList extends Component {
         return (
             <div>
                 <button onClick={this.handleAdd}>Add Item</button>
-                <ReactCSSTransitionGroup
+                {/*<ReactCSSTransitionGroup
                     transitionName="example"
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}>
                     
                     {items}
-                </ReactCSSTransitionGroup>
+                </ReactCSSTransitionGroup>*/}
             </div>
         );
     }

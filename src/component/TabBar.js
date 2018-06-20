@@ -1,36 +1,28 @@
-import React from 'react';
-import {NavLink} from "react-router-dom";
-import "./tabbar.less";
+/*
+*  TabBar 设置
+*  UI
+* */
 
-export default class IconTabs extends React.Component {
+import React, {Component} from "react";
+import {
+    StyleSheet,
+    View,
+    Text,
+    Image,
+} from "react-native";
+
+export default class TabBar extends Component {
     render() {
         return (
-            <div className="tab-wrapper">
-                <NavLink
-                    to="/home"
-                    className="tab-item"
-                >
-                    <p><span className="icon">&#xe610;</span>首页</p>
-                </NavLink>
-                <NavLink
-                    to="/message"
-                    className="tab-item"
-                >
-                    <p><span className="icon">&#xe604;</span>消息</p>
-                </NavLink>
-                <NavLink
-                    to="/find"
-                    className="tab-item"
-                >
-                    <p><span className="icon">&#xe603;</span>发现</p>
-                </NavLink>
-                <NavLink to="/mine" className="tab-item">
-                    <p>
-                        <span className="icon">&#xe600;</span>
-                        <span className="tab-item-text">我的</span>
-                    </p>
-                </NavLink>
-            </div>
-        );
+            <View style={styles.container}>
+                <Text>我是TabBar</Text>
+            </View>
+        )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+});

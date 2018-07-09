@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import Index from './src/Index';
 
 
-AppRegistry.registerComponent('schoolfile', () => App);
+AppRegistry.registerComponent('schoolfile', () => Index);

@@ -6,7 +6,7 @@
 # dependencies
 /node_modules
 
-# music
+# misc
 .env.local
 .env.development.local
 .env.test.local

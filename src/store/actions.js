@@ -4,6 +4,6 @@
 
 import * as types from "./mutation-types";
 
-export const addNum = ({ commit }) => {
-  commit(types.SET_NUM,1);
+export const addNum = ({ commit, state }) => {
+  commit(types.SET_NUM, state.num + 1);
 };

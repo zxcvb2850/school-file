@@ -1,5 +1,5 @@
 <template>
-  <div class="container" @click="clickHandle('test click', $event)">
+  <div class="container">
 
     <div class="userinfo" @click="bindViewTap">
       <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover"/>
@@ -19,7 +19,7 @@
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy"/>
     </form>
     <p>{{num}}</p>
-    <p @click="addNum">+++</p>
+    <p @click="addNuma">+++</p>
     <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
   </div>
 </template>
@@ -60,6 +60,10 @@
       },
       clickHandle(msg, ev) {
         console.log("clickHandle:", msg, ev);
+      },
+      addNuma(){
+        console.log(123);
+        this.addNum(1)
       }
     },
 

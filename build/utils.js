@@ -34,10 +34,14 @@ exports.cssLoaders = function (options) {
       rpxUnit: 0.5
     }
   }
+  
+  var lessLoader = {
+    loader: 'less-loader',
+  }
 
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    var loaders = [cssLoader, px2rpxLoader, postcssLoader]
+    var loaders = [cssLoader, px2rpxLoader, postcssLoader, lessLoader]
     if (loader) {
       loaders.push({
         loader: loader + '-loader',

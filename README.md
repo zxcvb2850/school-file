@@ -1,6 +1,6 @@
-# wechat-school-file
+# my-project
 
-> this is scholl-file-wechat
+> this is school project
 
 ## Build Setup
 

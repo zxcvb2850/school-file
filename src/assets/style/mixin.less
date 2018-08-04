@@ -5,6 +5,27 @@
   white-space: nowrap;
 }
 
+.bor-radius(@radius){
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.word-ellipsis(@num) {
+  display: -webkit-box;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @num;
+}
+
+.gradual(@radius,@color1,@color2) {
+  background: linear-gradient(@radius, @color1, @color2);
+}
+
 @mainColor1: #A468FB; //主颜色1
 @mainColor2: #7996E9; //主颜色2
 @auxiliaryColor: #FF5500;
@@ -775,4 +796,4 @@
 @height747: 747rpx;
 @height748: 748rpx;
 @height749: 749rpx;
-@height750: 750rpx;
+@height750: (750/20)rpx;

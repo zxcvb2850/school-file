@@ -20,7 +20,7 @@
     </div>
     <div class="movie-content">
       <ul class="movie-box">
-        <li class="now-movie" v-for="movie in moviceData" :key="movie.id">
+        <li class="now-movie" v-for="movie in movieData" :key="movie.id">
           <div class="item-img">
             <img :src="movie.img" alt="">
           </div>
@@ -51,7 +51,7 @@
             url: require("../../assets/img/banner-1.jpg")
           }
         ],
-        moviceData: [
+        movieData: [
           {
             id: 1,
             title: "战狼2",
